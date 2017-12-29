@@ -1,0 +1,3 @@
+Be sure to place TPowerFisher.dll and TPFProfile found in bin/Release to AlpacaBot\Scripts\Local\TPowerFisher
+
+Edit TPFProfile to change the Script Settings, and be sure to select TPFProfile when starting the script
