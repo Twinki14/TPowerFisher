@@ -21,6 +21,7 @@ static Counter Fished;
 static Countdown LoopCD;
 static Countdown PrintCD(30000);
 // Vars
+bool SetupFM = false;
 static std::string SpotName;
 static std::string Action;
 static std::vector<std::string> Tools;
@@ -46,59 +47,6 @@ void Setup()
 
     RequestArgument("FishMethod", "Fishing method to use, valid entries: NetSmall, Bait, Lure, Cage, Harpoon ");
     RequestArgument("TabOutChance", "Chance to tab out, 0.00 to 1.00");
-
-    FishMethod = GetArgument("FishMethod");
-    if (FishMethod != "")
-    {
-        Debug::Info << "FishMethod set to " << FishMethod << std::endl;
-    } else
-    {
-        FishMethod = "NetSmall";
-        Debug::Warning << "FishMethod not set! Defaulting to " << FishMethod << std::endl;
-    }
-
-
-    std::string TabOutChanceS = GetArgument("TabOutChance");
-    if (TabOutChanceS != "")
-    {
-        TabOutChance = std::stod(TabOutChanceS);
-        Debug::Info << "TabOutChance set to " << TabOutChance << std::endl;
-    }
-    else
-        Debug::Warning << "TabOutChance not set! Defaulting to " << TabOutChance << std::endl;
-
-    if (FishMethod == "NetSmall")
-    {
-        SpotName = "Fishing spot";
-        Action = "Net";
-        Tools = { "Small fishing net" };
-        Items = {"Raw shrimps", "Raw anchovies"};
-    } else if (FishMethod == "Bait")
-    {
-        SpotName = "Fishing spot";
-        Action = "Bait";
-        Tools = { "Fishing rod", "Fishing bait" };
-        Items = { "Raw sardine", "Raw herring", "Raw pike"  };
-    } else if (FishMethod == "Lure")
-    {
-        SpotName = "Fishing spot";
-        Action = "Lure";
-        Tools = { "Fly fishing rod", "Feather" };
-        Items = { "Raw trout", "Raw salmon" };
-    } else if (FishMethod == "Cage")
-    {
-        SpotName = "Fishing spot";
-        Action = "Cage";
-        Tools = { "Lobster pot" };
-        Items = { "Raw lobster" };
-    } else if (FishMethod == "Harpoon")
-    {
-        SpotName = "Fishing spot";
-        Action = "Harpoon";
-        Tools = { "Harpoon" };
-        Items = { "Raw tuna", "Raw swordfish", "Raw shark" };
-    } else
-        FishMethod.clear();
     Debug::ShowConsole();
     Debug::SetVerbose(true);
     RandomHandler::SetCheckDelay(5000);
@@ -210,6 +158,62 @@ bool DropFish()
 
 bool Loop()
 {
+    if (!SetupFM)
+    {
+        FishMethod = GetArgument("FishMethod");
+        if (FishMethod != "")
+        {
+            Debug::Info << "FishMethod set to " << FishMethod << std::endl;
+        } else
+        {
+            FishMethod = "NetSmall";
+            Debug::Warning << "FishMethod not set! Defaulting to " << FishMethod << std::endl;
+        }
+
+        std::string TabOutChanceS = GetArgument("TabOutChance");
+        if (TabOutChanceS != "")
+        {
+            TabOutChance = std::stod(TabOutChanceS);
+            Debug::Info << "TabOutChance set to " << TabOutChance << std::endl;
+        }
+        else
+            Debug::Warning << "TabOutChance not set! Defaulting to " << TabOutChance << std::endl;
+
+        if (FishMethod == "NetSmall")
+        {
+            SpotName = "Fishing spot";
+            Action = "Net";
+            Tools = { "Small fishing net" };
+            Items = {"Raw shrimps", "Raw anchovies"};
+        } else if (FishMethod == "Bait")
+        {
+            SpotName = "Fishing spot";
+            Action = "Bait";
+            Tools = { "Fishing rod", "Fishing bait" };
+            Items = { "Raw sardine", "Raw herring", "Raw pike"  };
+        } else if (FishMethod == "Lure")
+        {
+            SpotName = "Fishing spot";
+            Action = "Lure";
+            Tools = { "Fly fishing rod", "Feather" };
+            Items = { "Raw trout", "Raw salmon" };
+        } else if (FishMethod == "Cage")
+        {
+            SpotName = "Fishing spot";
+            Action = "Cage";
+            Tools = { "Lobster pot" };
+            Items = { "Raw lobster" };
+        } else if (FishMethod == "Harpoon")
+        {
+            SpotName = "Fishing spot";
+            Action = "Harpoon";
+            Tools = { "Harpoon" };
+            Items = { "Raw tuna", "Raw swordfish", "Raw shark" };
+        } else
+            FishMethod.clear();
+        SetupFM = true;
+    }
+
     BreakHandler::Break(false);
     if (LoopCD.IsFinished())
     {
