@@ -161,7 +161,7 @@ bool FishSpot(std::string& Action)
                     Paint::Clear();
                     C = NPCs::GetConvexOf(S);
                     Paint::DrawConvex(C, 66, 244, 235, 255);
-                    if (P.GetAnimation() != -1)
+                    if (P.GetAnimationID() != -1)
                     {
                         Paint::Clear();
                         C = NPCs::GetConvexOf(S);
@@ -240,7 +240,7 @@ bool Loop()
             }
 
             Player P = Players::GetLocal();
-            if ((P.GetAnimation() == -1) && (!Minimap::GetDestination().IsNegative()))
+            if ((P.GetAnimationID() == -1) && (!Minimap::GetDestination().IsNegative()))
             {
                 Debug::Info << "Not Fishing, gaining focus and attempting to Fish" << std::endl;
                 GainFocus();
