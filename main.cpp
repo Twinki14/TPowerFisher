@@ -21,7 +21,6 @@ static Counter Fished;
 static Countdown LoopCD;
 static Countdown PrintCD(30000);
 // Vars
-bool SetupFM = false;
 static std::string SpotName;
 static std::string Action;
 static std::vector<std::string> Tools;
@@ -52,8 +51,65 @@ void Setup()
     RandomHandler::SetCheckDelay(5000);
 }
 
+bool OnStart()
+{
+    FishMethod = GetArgument("FishMethod");
+    if (FishMethod != "")
+    {
+        Debug::Info << "FishMethod set to " << FishMethod << std::endl;
+    } else
+    {
+        FishMethod = "NetSmall";
+        Debug::Warning << "FishMethod not set! Defaulting to " << FishMethod << std::endl;
+    }
+
+    std::string TabOutChanceS = GetArgument("TabOutChance");
+    if (TabOutChanceS != "")
+    {
+        TabOutChance = std::stod(TabOutChanceS);
+        Debug::Info << "TabOutChance set to " << TabOutChance << std::endl;
+    }
+    else
+        Debug::Warning << "TabOutChance not set! Defaulting to " << TabOutChance << std::endl;
+
+    if (FishMethod == "NetSmall")
+    {
+        SpotName = "Fishing spot";
+        Action = "Net";
+        Tools = { "Small fishing net" };
+        Items = {"Raw shrimps", "Raw anchovies"};
+    } else if (FishMethod == "Bait")
+    {
+        SpotName = "Fishing spot";
+        Action = "Bait";
+        Tools = { "Fishing rod", "Fishing bait" };
+        Items = { "Raw sardine", "Raw herring", "Raw pike"  };
+    } else if (FishMethod == "Lure")
+    {
+        SpotName = "Fishing spot";
+        Action = "Lure";
+        Tools = { "Fly fishing rod", "Feather" };
+        Items = { "Raw trout", "Raw salmon" };
+    } else if (FishMethod == "Cage")
+    {
+        SpotName = "Fishing spot";
+        Action = "Cage";
+        Tools = { "Lobster pot" };
+        Items = { "Raw lobster" };
+    } else if (FishMethod == "Harpoon")
+    {
+        SpotName = "Fishing spot";
+        Action = "Harpoon";
+        Tools = { "Harpoon" };
+        Items = { "Raw tuna", "Raw swordfish", "Raw shark" };
+    } else
+        FishMethod.clear();
+    return (FishMethod != "");
+}
+
 void PrintStatus()
 {
+    Debug::Verbose << "[PowerFisher] Printing Status" << std::endl;
     std::int32_t Seconds = ((GetScriptTimer().GetTimeElapsed() / 1000) %60);
     std::int32_t Minutes = ((GetScriptTimer().GetTimeElapsed() / 60000) %60);
     std::int32_t Hours = (((GetScriptTimer().GetTimeElapsed() / 60000) / 60) %24);
@@ -74,6 +130,7 @@ void PrintStatus()
     Debug::Info << "--- Fatigue: " << Profile::GetFatigue() << std::endl;
     Debug::Info << "-----------------------------------------------" << std::endl;
     PrintCD.Reset();
+    Debug::Verbose << "[PowerFisher] Done Printing Status" << std::endl;
 }
 
 bool CheckBlacklist(const Tile& T)
@@ -86,6 +143,7 @@ bool CheckBlacklist(const Tile& T)
 
 bool FishSpot(std::string& Action)
 {
+    Debug::Verbose << "[PowerFisher] Starting FishSpot" << std::endl;
     std::vector<NPC> Spots = NPCs::GetAll(SpotName);
     for (auto& S : Spots)
     {
@@ -114,6 +172,7 @@ bool FishSpot(std::string& Action)
                         Paint::Clear();
                         C = NPCs::GetConvexOf(S);
                         Paint::DrawConvex(C, 66, 244, 235, 255);
+                        Debug::Verbose << "[PowerFisher] Ending FishSpot" << std::endl;
                         return true;
                     }
                     Wait(NormalRandom(200, 10.0f));
@@ -121,11 +180,13 @@ bool FishSpot(std::string& Action)
             }
         }
     }
+    Debug::Verbose << "[PowerFisher] Ending FishSpot" << std::endl;
     return false;
 }
 
 bool DropFish()
 {
+    Debug::Verbose << "[PowerFisher] Starting Drop Fish" << std::endl;
     if (!Inventory::IsOpen())
         Inventory::Open();
 
@@ -153,67 +214,12 @@ bool DropFish()
     if ((ShiftClick) && IsKeyDown(KEY_SHIFT))
         Interact::UpKey(KEY_SHIFT);
 
+    Debug::Verbose << "[PowerFisher] Ending Drop Fish" << std::endl;
     return (!Inventory::Contains(Items));
 }
 
 bool Loop()
 {
-    if (!SetupFM)
-    {
-        FishMethod = GetArgument("FishMethod");
-        if (FishMethod != "")
-        {
-            Debug::Info << "FishMethod set to " << FishMethod << std::endl;
-        } else
-        {
-            FishMethod = "NetSmall";
-            Debug::Warning << "FishMethod not set! Defaulting to " << FishMethod << std::endl;
-        }
-
-        std::string TabOutChanceS = GetArgument("TabOutChance");
-        if (TabOutChanceS != "")
-        {
-            TabOutChance = std::stod(TabOutChanceS);
-            Debug::Info << "TabOutChance set to " << TabOutChance << std::endl;
-        }
-        else
-            Debug::Warning << "TabOutChance not set! Defaulting to " << TabOutChance << std::endl;
-
-        if (FishMethod == "NetSmall")
-        {
-            SpotName = "Fishing spot";
-            Action = "Net";
-            Tools = { "Small fishing net" };
-            Items = {"Raw shrimps", "Raw anchovies"};
-        } else if (FishMethod == "Bait")
-        {
-            SpotName = "Fishing spot";
-            Action = "Bait";
-            Tools = { "Fishing rod", "Fishing bait" };
-            Items = { "Raw sardine", "Raw herring", "Raw pike"  };
-        } else if (FishMethod == "Lure")
-        {
-            SpotName = "Fishing spot";
-            Action = "Lure";
-            Tools = { "Fly fishing rod", "Feather" };
-            Items = { "Raw trout", "Raw salmon" };
-        } else if (FishMethod == "Cage")
-        {
-            SpotName = "Fishing spot";
-            Action = "Cage";
-            Tools = { "Lobster pot" };
-            Items = { "Raw lobster" };
-        } else if (FishMethod == "Harpoon")
-        {
-            SpotName = "Fishing spot";
-            Action = "Harpoon";
-            Tools = { "Harpoon" };
-            Items = { "Raw tuna", "Raw swordfish", "Raw shark" };
-        } else
-            FishMethod.clear();
-        SetupFM = true;
-    }
-
     BreakHandler::Break(false);
     if (LoopCD.IsFinished())
     {
@@ -224,6 +230,7 @@ bool Loop()
             if (PrintCD.IsFinished())
                 PrintStatus();
 
+            Debug::Verbose << "[PowerFisher] Checking Inventory first time" << std::endl;
             if (!Inventory::Contains(Tools))
             {
                 Debug::Fatal << "Tools aren't found in the Players Inventory, you need ";
@@ -232,7 +239,9 @@ bool Loop()
                 Debug::Fatal << "in the Players Inventory, stopping";
                 return false;
             }
+            Debug::Verbose << "[PowerFisher] Done Checking Inventory first time" << std::endl;
 
+            Debug::Verbose << "[PowerFisher] Checking Inventory again" << std::endl;
             if ((Inventory::IsFull()) && (Inventory::Contains(Items)))
             {
                 Debug::Info << "Inventory Full, attempting to empty Inventory" << std::endl;
@@ -242,6 +251,7 @@ bool Loop()
                 Debug::Info << "DropFish ended, about to Wait" << std::endl;
                 Wait(NormalRandom(2000, 0.05f));
             }
+            Debug::Verbose << "[PowerFisher] Done Checking Inventory again" << std::endl;
 
             Player P = Players::GetLocal();
             if ((P.GetAnimationID() == -1) && (!Minimap::GetDestination().IsNegative()))

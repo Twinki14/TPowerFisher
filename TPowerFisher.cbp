@@ -14,16 +14,16 @@
 				<Compiler>
 					<Add option="-O2" />
 					<Add option="-Wall" />
-					<Add option="-m32" />
 					<Add option="-std=c++17" />
+					<Add option="-m32" />
 					<Add option="-DBUILD_DLL" />
-					<Add directory="../Alpaca-Library/Include" />
+					<Add directory="../AlpacaLibrary/Include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
 					<Add option="-m32" />
 					<Add option="-lAlpacaLibrary" />
-					<Add directory="../Alpaca-Library/Library" />
+					<Add directory="../AlpacaLibrary/Library" />
 				</Linker>
 			</Target>
 		</Build>
