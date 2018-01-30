@@ -120,7 +120,7 @@ void PrintStatus()
         StartingLevel = Stats::GetCurrentLevel(Stats::FISHING);
     XPGained = (Stats::GetExperience(Stats::FISHING) - StartingXP);
     LevelsGained = (Stats::GetCurrentLevel(Stats::FISHING) - StartingLevel);
-    Debug::Info << "------------------- TPowerFisher -------------------" << std::endl;
+    Debug::Info << "------------------- TPowerFisher by Twinki -------------------" << std::endl;
     Debug::Info << "--- Runtime: " << Hours << ":" << Minutes << ":" << Seconds << std::endl;
     Debug::Info << "--- Fished: " << Fished.GetIterations() << std::endl;
     Debug::Info << "--- XP Gained: " << XPGained << std::endl;
@@ -128,7 +128,7 @@ void PrintStatus()
     Debug::Info << "--- BreakTimer: " << (double) (BreakHandler::GetBreakTimer().GetTimeElapsed() / 60000) << " minutes" << std::endl;
     Debug::Info << "--- BreakCounter: " << BreakHandler::GetBreakCounter() << std::endl;
     Debug::Info << "--- Fatigue: " << Profile::GetFatigue() << std::endl;
-    Debug::Info << "-----------------------------------------------" << std::endl;
+    Debug::Info << "--------------------------------------------------------------" << std::endl;
     PrintCD.Reset();
     Debug::Verbose << "[PowerFisher] Done Printing Status" << std::endl;
 }
