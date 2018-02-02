@@ -47,7 +47,7 @@ void Setup()
     RequestArgument("FishMethod", "Fishing method to use, valid entries: NetSmall, Bait, Lure, Cage, Harpoon ");
     RequestArgument("TabOutChance", "Chance to tab out, 0.00 to 1.00");
     Debug::ShowConsole();
-    Debug::SetVerbose(true);
+    Debug::SetVerbose(false);
     RandomHandler::SetCheckDelay(5000);
 }
 
@@ -77,7 +77,7 @@ bool OnStart()
         SpotName = "Fishing spot";
         Action = "Net";
         Tools = { "Small fishing net" };
-        Items = {"Raw shrimps", "Raw anchovies"};
+        Items = { "Raw shrimps", "Raw anchovies" };
     } else if (FishMethod == "Bait")
     {
         SpotName = "Fishing spot";
@@ -215,7 +215,7 @@ bool DropFish()
         Interact::UpKey(KEY_SHIFT);
 
     Debug::Verbose << "[PowerFisher] Ending Drop Fish" << std::endl;
-    return (!Inventory::Contains(Items));
+    return (!Inventory::ContainsAny(Items));
 }
 
 bool Loop()
@@ -231,7 +231,7 @@ bool Loop()
                 PrintStatus();
 
             Debug::Verbose << "[PowerFisher] Checking Inventory first time" << std::endl;
-            if (!Inventory::Contains(Tools))
+            if (!Inventory::ContainsAny(Tools))
             {
                 Debug::Fatal << "Tools aren't found in the Players Inventory, you need ";
                 for (auto& T : Tools)
@@ -242,7 +242,7 @@ bool Loop()
             Debug::Verbose << "[PowerFisher] Done Checking Inventory first time" << std::endl;
 
             Debug::Verbose << "[PowerFisher] Checking Inventory again" << std::endl;
-            if ((Inventory::IsFull()) && (Inventory::Contains(Items)))
+            if ((Inventory::IsFull()) && (Inventory::ContainsAny(Items)))
             {
                 Debug::Info << "Inventory Full, attempting to empty Inventory" << std::endl;
                 GainFocus();

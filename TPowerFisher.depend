@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1515883689 source:c:\users\twinki\documents\codeblocks projects\tpowerfisher\main.cpp
+1517550767 source:c:\users\twinki\documents\codeblocks projects\tpowerfisher\main.cpp
 	<Game/Core.hpp>
 	<Core/Internal.hpp>
 	<Game/Tools/BreakHandler.hpp>
@@ -674,7 +674,7 @@
 	<cstdint>
 	"Renderable.hpp"
 
-1512716089 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\core.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\core.hpp
 	"../Core/Internal.hpp"
 	"Tools/BreakHandler.hpp"
 	"Tools/Interact.hpp"
@@ -708,7 +708,7 @@
 	"Models/NPCs.hpp"
 	"Models/Players.hpp"
 
-1515381403 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\internal.hpp
+1517543583 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\internal.hpp
 	"Debug.hpp"
 	"Input.hpp"
 	"Math.hpp"
@@ -739,6 +739,7 @@
 	"Classes/Character.hpp"
 	"Classes/ChatLineBuffer.hpp"
 	"Classes/ClanMember.hpp"
+	"Classes/ClanMemberList.hpp"
 	"Classes/DecorativeObject.hpp"
 	"Classes/Deque.hpp"
 	"Classes/DynamicObject.hpp"
@@ -747,28 +748,36 @@
 	"Classes/FrameMap.hpp"
 	"Classes/Frames.hpp"
 	"Classes/Friend.hpp"
+	"Classes/FriendList.hpp"
 	"Classes/GameObject.hpp"
 	"Classes/GameShell.hpp"
+	"Classes/GraphicsObject.hpp"
 	"Classes/GroundItem.hpp"
 	"Classes/GroundObject.hpp"
 	"Classes/HashTable.hpp"
 	"Classes/Ignore.hpp"
+	"Classes/IgnoreList.hpp"
 	"Classes/ItemContainer.hpp"
 	"Classes/ItemInfo.hpp"
 	"Classes/LinkedList.hpp"
 	"Classes/MessageNode.hpp"
 	"Classes/Model.hpp"
+	"Classes/Nameable.hpp"
+	"Classes/NameableContainer.hpp"
+	"Classes/NamePair.hpp"
 	"Classes/Node.hpp"
 	"Classes/NPC.hpp"
 	"Classes/NPCInfo.hpp"
 	"Classes/ObjectInfo.hpp"
 	"Classes/Player.hpp"
 	"Classes/PlayerInfo.hpp"
+	"Classes/PlayerManager.hpp"
 	"Classes/Preferences.hpp"
 	"Classes/Queue.hpp"
 	"Classes/Region.hpp"
 	"Classes/Renderable.hpp"
 	"Classes/SceneTile.hpp"
+	"Classes/SpotAnimation.hpp"
 	"Classes/Sprite.hpp"
 	"Classes/Varbit.hpp"
 	"Classes/WallObject.hpp"
@@ -776,147 +785,147 @@
 	"Classes/WidgetNode.hpp"
 	"Classes/World.hpp"
 
-1514244280 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\debug.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\debug.hpp
 	"../../Include/Core/Types/Logger.hpp"
 
-1512600894 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\types\logger.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\types\logger.hpp
 	<iostream>
 	<string>
 
-1514023008 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\input.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\input.hpp
 	"Types/Point.hpp"
 	<string>
 	<cstdint>
 
-1511621046 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\types\point.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\types\point.hpp
 	<cstdint>
 	"Box.hpp"
 
-1511621142 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\types\box.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\types\box.hpp
 	<iostream>
 	<cstdint>
 	"Point.hpp"
 
-1510329526 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\math.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\math.hpp
 	<cstdint>
 	<vector>
 	"Types/Point.hpp"
 
-1510329526 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\paint.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\paint.hpp
 	<vector>
 	"Types/Convex.hpp"
 
-1511621658 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\types\convex.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\types\convex.hpp
 	<vector>
 	"Point.hpp"
 	"Box.hpp"
 
-1514095914 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\script.hpp
+1517543583 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\script.hpp
 	<string>
 	<vector>
 	"Types/Timer.hpp"
 
-1512909499 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\types\timer.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\types\timer.hpp
 	<iostream>
 	<cstdint>
 
-1510329526 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\time.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\time.hpp
 	<cstdint>
 	<functional>
 
-1511621026 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\types\tile.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\types\tile.hpp
 	<iostream>
 	<cstdint>
 
-1512439528 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\types\counter.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\types\counter.hpp
 	<iostream>
 	<cstdint>
 
-1512999861 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\types\countdown.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\types\countdown.hpp
 	<iostream>
 	<cstdint>
 
-1511621110 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\types\area.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\types\area.hpp
 	"Tile.hpp"
 	"Convex.hpp"
 	<vector>
 	<cstdint>
 
-1510329526 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\javaclass\canvas.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\javaclass\canvas.hpp
 	<cstdint>
 	"Object.hpp"
 
-1514095914 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\javaclass\object.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\javaclass\object.hpp
 
-1510329526 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\javaclass\focusevent.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\javaclass\focusevent.hpp
 	<cstdint>
 	"Object.hpp"
 
-1510329526 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\javaclass\integer.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\javaclass\integer.hpp
 	<cstdint>
 	"Object.hpp"
 
-1510329526 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\javaclass\keyevent.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\javaclass\keyevent.hpp
 	<cstdint>
 	"Object.hpp"
 
-1510329526 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\javaclass\linkedhashmap.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\javaclass\linkedhashmap.hpp
 	"Object.hpp"
 
-1510329526 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\javaclass\map.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\javaclass\map.hpp
 	<cstdint>
 	"Object.hpp"
 	"Set.hpp"
 
-1510329526 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\javaclass\set.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\javaclass\set.hpp
 	<vector>
 	"Object.hpp"
 
-1510329526 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\javaclass\mouseevent.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\javaclass\mouseevent.hpp
 	<cstdint>
 	"Object.hpp"
 
-1510329526 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\javaclass\mousewheelevent.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\javaclass\mousewheelevent.hpp
 	<cstdint>
 	"Object.hpp"
 
-1514095914 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\animation.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\animation.hpp
 	"CacheableNode.hpp"
 	"../JavaClass/Class.hpp"
 	<vector>
 	<cstdint>
 
-1514095914 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\cacheablenode.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\cacheablenode.hpp
 	"Node.hpp"
 	"../JavaClass/Class.hpp"
 
-1514095914 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\node.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\node.hpp
 	"../JavaClass/Object.hpp"
 	"../JavaClass/Class.hpp"
 	<cstdint>
 
-1514095914 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\javaclass\class.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\javaclass\class.hpp
 	"Object.hpp"
 
-1514095914 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\cache.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\cache.hpp
 	"../JavaClass/Object.hpp"
 	"../JavaClass/Class.hpp"
 	"HashTable.hpp"
 	"Queue.hpp"
 
-1514095914 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\hashtable.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\hashtable.hpp
 	"../JavaClass/Object.hpp"
 	"../JavaClass/Class.hpp"
 	<vector>
 	"Node.hpp"
 	<cstdint>
 
-1514095914 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\queue.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\queue.hpp
 	"../JavaClass/Object.hpp"
 	"../JavaClass/Class.hpp"
 	"CacheableNode.hpp"
 
-1515381403 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\character.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\character.hpp
 	"Renderable.hpp"
 	"../JavaClass/Class.hpp"
 	<cstdint>
@@ -924,174 +933,172 @@
 	<string>
 	<vector>
 
-1514095914 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\renderable.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\renderable.hpp
 	"CacheableNode.hpp"
 	"../JavaClass/Class.hpp"
 	<cstdint>
 
-1514095914 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\linkedlist.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\linkedlist.hpp
 	"../JavaClass/Object.hpp"
 	"../JavaClass/Class.hpp"
 	"Node.hpp"
 
-1514095914 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\chatlinebuffer.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\chatlinebuffer.hpp
 	"../JavaClass/Object.hpp"
 	"../JavaClass/Class.hpp"
 	<cstdint>
 	<vector>
 	"MessageNode.hpp"
 
-1514095914 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\messagenode.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\messagenode.hpp
 	"CacheableNode.hpp"
 	"../JavaClass/Class.hpp"
 	<cstdint>
 	<string>
 
-1514095914 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\clanmember.hpp
-	"Node.hpp"
+1517543583 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\clanmember.hpp
+	"Nameable.hpp"
 	"../JavaClass/Class.hpp"
-	<string>
 	<cstdint>
 
-1515381403 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\decorativeobject.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\decorativeobject.hpp
 	"../JavaClass/Object.hpp"
 	"../JavaClass/Class.hpp"
 	<cstdint>
 	"Renderable.hpp"
 
-1514095914 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\deque.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\deque.hpp
 	"../JavaClass/Object.hpp"
 	"../JavaClass/Class.hpp"
 	"Node.hpp"
 
-1515381403 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\dynamicobject.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\dynamicobject.hpp
 	"Renderable.hpp"
 	"../JavaClass/Class.hpp"
 	<cstdint>
 
-1514095914 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\exchangeoffer.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\exchangeoffer.hpp
 	"../JavaClass/Object.hpp"
 	"../JavaClass/Class.hpp"
 	<cstdint>
 
-1514095914 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\frame.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\frame.hpp
 	"../JavaClass/Object.hpp"
 	"../JavaClass/Class.hpp"
 	<vector>
 	<cstdint>
 	"FrameMap.hpp"
 
-1514095914 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\framemap.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\framemap.hpp
 	"Node.hpp"
 	"../JavaClass/Class.hpp"
 	<vector>
 	<cstdint>
 
-1514095914 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\frames.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\frames.hpp
 	"CacheableNode.hpp"
 	"../JavaClass/Class.hpp"
 	<vector>
 	"Frame.hpp"
 
-1514095914 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\friend.hpp
-	"../JavaClass/Object.hpp"
+1517543583 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\friend.hpp
+	"Nameable.hpp"
 	"../JavaClass/Class.hpp"
-	<string>
 	<cstdint>
 
-1515381403 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\gameobject.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\gameobject.hpp
 	"../JavaClass/Object.hpp"
 	"../JavaClass/Class.hpp"
 	<cstdint>
 	"Renderable.hpp"
 
-1514095914 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\gameshell.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\gameshell.hpp
 	"../JavaClass/Object.hpp"
 	"../JavaClass/Class.hpp"
 	"../JavaClass/Canvas.hpp"
 
-1514095914 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\grounditem.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\grounditem.hpp
 	"Renderable.hpp"
 	"../JavaClass/Class.hpp"
 	<cstdint>
 
-1515381403 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\groundobject.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\groundobject.hpp
 	"../JavaClass/Object.hpp"
 	"../JavaClass/Class.hpp"
 	<cstdint>
 	"Renderable.hpp"
 
-1514095914 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\ignore.hpp
-	"../JavaClass/Object.hpp"
+1517543583 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\ignore.hpp
+	"Nameable.hpp"
 	"../JavaClass/Class.hpp"
-	<string>
 
-1514095914 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\itemcontainer.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\itemcontainer.hpp
 	"Node.hpp"
 	"../JavaClass/Class.hpp"
 	<vector>
 	<cstdint>
 
-1514095914 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\iteminfo.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\iteminfo.hpp
 	"CacheableNode.hpp"
 	"../JavaClass/Class.hpp"
 	<vector>
 	<string>
 	<cstdint>
 
-1514095914 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\model.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\model.hpp
 	"Renderable.hpp"
 	"../JavaClass/Class.hpp"
 	<vector>
 	<cstdint>
 
-1514095914 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\npc.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\npc.hpp
 	"Character.hpp"
 	"../JavaClass/Class.hpp"
 	"NPCInfo.hpp"
 
-1515381403 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\npcinfo.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\npcinfo.hpp
 	"CacheableNode.hpp"
 	"../JavaClass/Class.hpp"
 	<vector>
 	<string>
 	<cstdint>
 
-1514095914 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\objectinfo.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\objectinfo.hpp
 	"CacheableNode.hpp"
 	"../JavaClass/Class.hpp"
 	<vector>
 	<string>
 	<cstdint>
 
-1514095914 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\player.hpp
+1517543583 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\player.hpp
 	"Character.hpp"
 	"../JavaClass/Class.hpp"
 	<vector>
 	<string>
 	<cstdint>
 	"PlayerInfo.hpp"
+	"NamePair.hpp"
 
-1514095914 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\playerinfo.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\playerinfo.hpp
 	"../JavaClass/Object.hpp"
 	"../JavaClass/Class.hpp"
 	<vector>
 	<cstdint>
 
-1514095914 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\preferences.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\preferences.hpp
 	"../JavaClass/Object.hpp"
 	"../JavaClass/Class.hpp"
 	"../JavaClass/LinkedHashMap.hpp"
 	<cstdint>
 
-1515381403 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\region.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\region.hpp
 	"../JavaClass/Object.hpp"
 	"../JavaClass/Class.hpp"
 	<vector>
 	"GameObject.hpp"
 	"SceneTile.hpp"
 
-1515381403 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\scenetile.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\scenetile.hpp
 	"Node.hpp"
 	"../JavaClass/Class.hpp"
 	"DecorativeObject.hpp"
@@ -1101,172 +1108,172 @@
 	<cstdint>
 	"WallObject.hpp"
 
-1515381403 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\wallobject.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\wallobject.hpp
 	"../JavaClass/Object.hpp"
 	"../JavaClass/Class.hpp"
 	<cstdint>
 	"Renderable.hpp"
 
-1514095914 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\sprite.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\sprite.hpp
 	"../JavaClass/Object.hpp"
 	"../JavaClass/Class.hpp"
 	<cstdint>
 	<vector>
 
-1514095914 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\varbit.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\varbit.hpp
 	"CacheableNode.hpp"
 	"../JavaClass/Class.hpp"
 	<cstdint>
 
-1514095914 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\widget.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\widget.hpp
 	"Node.hpp"
 	"../JavaClass/Class.hpp"
 	<vector>
 	<string>
 	<cstdint>
 
-1514095914 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\widgetnode.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\widgetnode.hpp
 	"Node.hpp"
 	"../JavaClass/Class.hpp"
 	<cstdint>
 
-1514095914 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\world.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\world.hpp
 	"../JavaClass/Object.hpp"
 	"../JavaClass/Class.hpp"
 	<string>
 	<cstdint>
 
-1512716089 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\tools\breakhandler.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\tools\breakhandler.hpp
 	"../../Core/Types/Timer.hpp"
 	"../../Core/Types/Counter.hpp"
 
-1515381403 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\tools\interact.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\tools\interact.hpp
 	"../../Core/Input.hpp"
 	"../../Core/Internal.hpp"
 	<functional>
 	<string>
 	<cstdint>
 
-1510329526 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\tools\profile.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\tools\profile.hpp
 	"../../Core/Types/Timer.hpp"
 	<cstdint>
 	<string>
 
-1510329526 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\tools\settings.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\tools\settings.hpp
 	<cstdint>
 	<vector>
 
-1510329526 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\tools\widgets.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\tools\widgets.hpp
 	"../../Core/Types/Box.hpp"
 	"../../Core/Classes/Widget.hpp"
 	<functional>
 	<cstdint>
 	<vector>
 
-1510329526 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\tools\worlds.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\tools\worlds.hpp
 	"../../Core/Classes/World.hpp"
 	<functional>
 	<cstdint>
 	<string>
 	<vector>
 
-1510329526 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\bank.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\bank.hpp
 	"../../Core/Types/Convex.hpp"
 	<string>
 	<cstdint>
 	<vector>
 
-1510329526 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\chat.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\chat.hpp
 	"../../Core/Classes/MessageNode.hpp"
 	<cstdint>
 	<string>
 	<vector>
 
-1510329526 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\depositbox.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\depositbox.hpp
 
-1510329526 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\login.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\login.hpp
 	"../../Core/Types/Box.hpp"
 	"../../Core/Classes/World.hpp"
 	<cstdint>
 	<string>
 	<vector>
 
-1513798017 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\mainscreen.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\mainscreen.hpp
 	"../../Core/Types/Box.hpp"
 	"../../Core/Classes/Character.hpp"
 	<cstdint>
 	<string>
 	<vector>
 
-1510329526 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\menu.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\menu.hpp
 	"../../Core/Types/Box.hpp"
 	<cstdint>
 	<string>
 	<vector>
 
-1514023008 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\minimap.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\minimap.hpp
 	"../../Core/Types/Tile.hpp"
 	"../../Core/Types/Point.hpp"
 	"../../Core/Classes/Region.hpp"
 	<cstdint>
 
-1510329526 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\gametabs\clan.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\gametabs\clan.hpp
 	"../../../Core/Classes/ClanMember.hpp"
 	<functional>
 	<vector>
 
-1510329526 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\gametabs\combat.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\gametabs\combat.hpp
 	<cstdint>
 	<string>
 
-1510329526 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\gametabs\emotes.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\gametabs\emotes.hpp
 
-1510329526 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\gametabs\equipment.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\gametabs\equipment.hpp
 	<cstdint>
 	<vector>
 	<string>
 
-1510329526 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\gametabs\friends.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\gametabs\friends.hpp
 	"../../../Core/Classes/Friend.hpp"
 	<functional>
 	<vector>
 
-1510329526 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\gametabs\ignores.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\gametabs\ignores.hpp
 	"../../../Core/Classes/Ignore.hpp"
 	<functional>
 	<vector>
 
-1512878856 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\gametabs\inventory.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\gametabs\inventory.hpp
 	"../../../Core/Types/Box.hpp"
 	"../../../Core/Types/Convex.hpp"
 	<vector>
 	<cstdint>
 	<string>
 
-1510329526 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\gametabs\logout.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\gametabs\logout.hpp
 	"../../../Core/Types/Box.hpp"
 	"../../../Core/Classes/World.hpp"
 	"../../../Core/Classes/Widget.hpp"
 	<cstdint>
 	<vector>
 
-1510329526 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\gametabs\magic.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\gametabs\magic.hpp
 	<string>
 	<cstdint>
 
-1510329526 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\gametabs\music.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\gametabs\music.hpp
 
-1510329526 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\gametabs\options.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\gametabs\options.hpp
 
-1510329526 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\gametabs\prayer.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\gametabs\prayer.hpp
 	<cstdint>
 
-1510329526 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\gametabs\quests.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\gametabs\quests.hpp
 
-1510329526 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\gametabs\stats.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\gametabs\stats.hpp
 	<cstdint>
 
-1515381403 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\models\sceneobjects.hpp
+1517338916 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\models\sceneobjects.hpp
 	"../../Core/Classes/GameObject.hpp"
 	"../../Core/Classes/DecorativeObject.hpp"
 	"../../Core/Classes/GroundObject.hpp"
@@ -1278,7 +1285,7 @@
 	<vector>
 	<string>
 
-1510329526 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\models\grounditems.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\models\grounditems.hpp
 	"../../Core/Classes/GroundItem.hpp"
 	"../../Core/Types/Tile.hpp"
 	"../../Core/Types/Convex.hpp"
@@ -1287,7 +1294,7 @@
 	<vector>
 	<string>
 
-1513723384 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\models\npcs.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\models\npcs.hpp
 	"../../Core/Classes/NPC.hpp"
 	"../../Core/Types/Tile.hpp"
 	"../../Core/Types/Convex.hpp"
@@ -1296,7 +1303,7 @@
 	<vector>
 	<string>
 
-1513723385 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\models\players.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\models\players.hpp
 	"../../Core/Classes/Player.hpp"
 	"../../Core/Types/Tile.hpp"
 	"../../Core/Types/Convex.hpp"
@@ -1305,8 +1312,53 @@
 	<vector>
 	<string>
 
-1514244062 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\tools\randomhandler.hpp
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\tools\randomhandler.hpp
 	"../../Core/Types/Counter.hpp"
 	"../../Core/Types/Countdown.hpp"
+	<cstdint>
+
+1517543583 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\nameable.hpp
+	"../JavaClass/Object.hpp"
+	"../JavaClass/Class.hpp"
+	"NamePair.hpp"
+
+1517543583 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\namepair.hpp
+	"../JavaClass/Object.hpp"
+	"../JavaClass/Class.hpp"
+	<string>
+
+1517543583 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\clanmemberlist.hpp
+	"NameableContainer.hpp"
+	"../JavaClass/Class.hpp"
+
+1517543583 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\nameablecontainer.hpp
+	"../JavaClass/Object.hpp"
+	"../JavaClass/Class.hpp"
+	<vector>
+	"Nameable.hpp"
+
+1517543583 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\friendlist.hpp
+	"NameableContainer.hpp"
+	"../JavaClass/Class.hpp"
+
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\graphicsobject.hpp
+	"Renderable.hpp"
+	"../JavaClass/Class.hpp"
+	"Animation.hpp"
+	<cstdint>
+
+1517543583 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\ignorelist.hpp
+	"NameableContainer.hpp"
+	"../JavaClass/Class.hpp"
+
+1517543583 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\playermanager.hpp
+	"../JavaClass/Object.hpp"
+	"../JavaClass/Class.hpp"
+	"FriendList.hpp"
+	"IgnoreList.hpp"
+
+1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\spotanimation.hpp
+	"CacheableNode.hpp"
+	"../JavaClass/Class.hpp"
 	<cstdint>
 
