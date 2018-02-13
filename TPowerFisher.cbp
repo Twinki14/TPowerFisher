@@ -14,13 +14,17 @@
 				<Compiler>
 					<Add option="-O2" />
 					<Add option="-Wall" />
-					<Add option="-std=c++17" />
+					<Add option="-std=c++1z" />
 					<Add option="-m32" />
 					<Add option="-DBUILD_DLL" />
 					<Add directory="../AlpacaLibrary/Include" />
+					<Add directory="AlpacaClient/Source/Core/Utils/Tasks" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
+					<Add option="-static-libstdc++" />
+					<Add option="-static-libgcc" />
+					<Add option="-static" />
 					<Add option="-m32" />
 					<Add option="-lAlpacaLibrary" />
 					<Add directory="../AlpacaLibrary/Library" />
