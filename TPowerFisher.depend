@@ -708,7 +708,7 @@
 	"Models/NPCs.hpp"
 	"Models/Players.hpp"
 
-1517543583 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\internal.hpp
+1518558816 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\internal.hpp
 	"Debug.hpp"
 	"Input.hpp"
 	"Math.hpp"
@@ -734,6 +734,7 @@
 	"JavaClass/MouseWheelEvent.hpp"
 	"JavaClass/Object.hpp"
 	"Classes/Animation.hpp"
+	"Classes/AttackOption.hpp"
 	"Classes/Cache.hpp"
 	"Classes/CacheableNode.hpp"
 	"Classes/Character.hpp"
@@ -820,7 +821,7 @@
 	"Point.hpp"
 	"Box.hpp"
 
-1517543583 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\script.hpp
+1518369003 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\script.hpp
 	<string>
 	<vector>
 	"Types/Timer.hpp"
@@ -925,7 +926,7 @@
 	"../JavaClass/Class.hpp"
 	"CacheableNode.hpp"
 
-1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\character.hpp
+1518369003 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\character.hpp
 	"Renderable.hpp"
 	"../JavaClass/Class.hpp"
 	<cstdint>
@@ -1085,11 +1086,12 @@
 	<vector>
 	<cstdint>
 
-1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\preferences.hpp
+1518369003 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\preferences.hpp
 	"../JavaClass/Object.hpp"
 	"../JavaClass/Class.hpp"
 	"../JavaClass/LinkedHashMap.hpp"
 	<cstdint>
+	<string>
 
 1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\region.hpp
 	"../JavaClass/Object.hpp"
@@ -1154,7 +1156,7 @@
 	<string>
 	<cstdint>
 
-1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\tools\profile.hpp
+1518369003 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\tools\profile.hpp
 	"../../Core/Types/Timer.hpp"
 	<cstdint>
 	<string>
@@ -1294,7 +1296,7 @@
 	<vector>
 	<string>
 
-1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\models\npcs.hpp
+1518341079 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\models\npcs.hpp
 	"../../Core/Classes/NPC.hpp"
 	"../../Core/Types/Tile.hpp"
 	"../../Core/Types/Convex.hpp"
@@ -1303,7 +1305,7 @@
 	<vector>
 	<string>
 
-1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\models\players.hpp
+1518341205 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\models\players.hpp
 	"../../Core/Classes/Player.hpp"
 	"../../Core/Types/Tile.hpp"
 	"../../Core/Types/Convex.hpp"
@@ -1359,6 +1361,11 @@
 
 1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\spotanimation.hpp
 	"CacheableNode.hpp"
+	"../JavaClass/Class.hpp"
+	<cstdint>
+
+1518369003 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\attackoption.hpp
+	"../JavaClass/Object.hpp"
 	"../JavaClass/Class.hpp"
 	<cstdint>
 
