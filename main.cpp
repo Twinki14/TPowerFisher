@@ -47,7 +47,7 @@ void Setup()
     RequestArgument("FishMethod", "Fishing method to use, valid entries: NetSmall, Bait, Lure, Cage, Harpoon ");
     RequestArgument("TabOutChance", "Chance to tab out, 0.00 to 1.00");
     Debug::ShowConsole();
-    Debug::SetVerbose(false);
+    Debug::SetVerbose(true);
     RandomHandler::SetCheckDelay(5000);
 }
 
