@@ -166,12 +166,12 @@ bool FishSpot(std::string& Action)
                 {
                     Paint::Clear();
                     C = NPCs::GetConvexOf(S);
-                    Paint::DrawConvex(C, 66, 244, 235, 255);
+                    Paint::DrawConvex(C, 0, 255, 0, 255);
                     if (P.GetAnimationID() != -1)
                     {
                         Paint::Clear();
                         C = NPCs::GetConvexOf(S);
-                        Paint::DrawConvex(C, 66, 244, 235, 255);
+                        Paint::DrawConvex(C, 0, 255, 0, 255);
                         Debug::Verbose << "[PowerFisher] Ending FishSpot" << std::endl;
                         return true;
                     }
