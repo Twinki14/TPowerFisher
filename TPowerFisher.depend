@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1518716805 source:c:\users\twinki\documents\codeblocks projects\tpowerfisher\main.cpp
+1519950780 source:c:\users\twinki\documents\codeblocks projects\tpowerfisher\main.cpp
 	<Game/Core.hpp>
 	<Core/Internal.hpp>
 	<Game/Tools/BreakHandler.hpp>
@@ -708,7 +708,7 @@
 	"Models/NPCs.hpp"
 	"Models/Players.hpp"
 
-1518558816 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\internal.hpp
+1519445661 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\internal.hpp
 	"Debug.hpp"
 	"Input.hpp"
 	"Math.hpp"
@@ -780,6 +780,7 @@
 	"Classes/SceneTile.hpp"
 	"Classes/SpotAnimation.hpp"
 	"Classes/Sprite.hpp"
+	"Classes/Talkable.hpp"
 	"Classes/Varbit.hpp"
 	"Classes/WallObject.hpp"
 	"Classes/Widget.hpp"
@@ -830,7 +831,7 @@
 	<iostream>
 	<cstdint>
 
-1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\time.hpp
+1519064883 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\time.hpp
 	<cstdint>
 	<functional>
 
@@ -957,8 +958,8 @@
 	<cstdint>
 	<string>
 
-1517543583 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\clanmember.hpp
-	"Nameable.hpp"
+1519433321 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\clanmember.hpp
+	"Talkable.hpp"
 	"../JavaClass/Class.hpp"
 	<cstdint>
 
@@ -1002,8 +1003,8 @@
 	<vector>
 	"Frame.hpp"
 
-1517543583 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\friend.hpp
-	"Nameable.hpp"
+1519433321 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\friend.hpp
+	"Talkable.hpp"
 	"../JavaClass/Class.hpp"
 	<cstdint>
 
@@ -1219,7 +1220,7 @@
 	"../../Core/Classes/Region.hpp"
 	<cstdint>
 
-1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\gametabs\clan.hpp
+1519446043 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\gametabs\clan.hpp
 	"../../../Core/Classes/ClanMember.hpp"
 	<functional>
 	<vector>
@@ -1333,7 +1334,7 @@
 	"NameableContainer.hpp"
 	"../JavaClass/Class.hpp"
 
-1517543583 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\nameablecontainer.hpp
+1519445661 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\nameablecontainer.hpp
 	"../JavaClass/Object.hpp"
 	"../JavaClass/Class.hpp"
 	<vector>
@@ -1366,6 +1367,11 @@
 
 1518369003 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\attackoption.hpp
 	"../JavaClass/Object.hpp"
+	"../JavaClass/Class.hpp"
+	<cstdint>
+
+1519433321 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\classes\talkable.hpp
+	"Nameable.hpp"
 	"../JavaClass/Class.hpp"
 	<cstdint>
 

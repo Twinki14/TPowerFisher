@@ -21,7 +21,7 @@ static Counter Fished;
 static Countdown LoopCD;
 static Countdown PrintCD(30000);
 // Vars
-static std::vector<std::string> SpotsNames = { "Fishing spot", "Rod fishing spot" };
+static std::vector<std::string> SpotsNames = { "Fishing spot", "Rod Fishing spot" };
 static std::string Action;
 static std::vector<std::string> Tools;
 static std::vector<std::string> Items;
@@ -140,6 +140,7 @@ bool FishSpot(std::string& Action)
 {
     Debug::Verbose << "[PowerFisher] Starting FishSpot" << std::endl;
     std::vector<NPC> Spots = NPCs::GetAll(SpotsNames);
+    std::cout << Spots.size() << std::endl;
     for (auto& S : Spots)
     {
         Tile ST = NPCs::GetTileOf(S);
