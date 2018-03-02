@@ -21,7 +21,7 @@ static Counter Fished;
 static Countdown LoopCD;
 static Countdown PrintCD(30000);
 // Vars
-static std::string SpotName;
+static std::vector<std::string> SpotsNames = { "Fishing spot", "Rod fishing spot" };
 static std::string Action;
 static std::vector<std::string> Tools;
 static std::vector<std::string> Items;
@@ -74,31 +74,26 @@ bool OnStart()
 
     if (FishMethod == "NetSmall")
     {
-        SpotName = "Fishing spot";
         Action = "Net";
         Tools = { "Small fishing net" };
         Items = { "Raw shrimps", "Raw anchovies" };
     } else if (FishMethod == "Bait")
     {
-        SpotName = "Fishing spot";
         Action = "Bait";
         Tools = { "Fishing rod", "Fishing bait" };
         Items = { "Raw sardine", "Raw herring", "Raw pike"  };
     } else if (FishMethod == "Lure")
     {
-        SpotName = "Fishing spot";
         Action = "Lure";
         Tools = { "Fly fishing rod", "Feather" };
         Items = { "Raw trout", "Raw salmon" };
     } else if (FishMethod == "Cage")
     {
-        SpotName = "Fishing spot";
         Action = "Cage";
         Tools = { "Lobster pot" };
         Items = { "Raw lobster" };
     } else if (FishMethod == "Harpoon")
     {
-        SpotName = "Fishing spot";
         Action = "Harpoon";
         Tools = { "Harpoon" };
         Items = { "Raw tuna", "Raw swordfish", "Raw shark" };
@@ -144,7 +139,7 @@ bool CheckBlacklist(const Tile& T)
 bool FishSpot(std::string& Action)
 {
     Debug::Verbose << "[PowerFisher] Starting FishSpot" << std::endl;
-    std::vector<NPC> Spots = NPCs::GetAll(SpotName);
+    std::vector<NPC> Spots = NPCs::GetAll(SpotsNames);
     for (auto& S : Spots)
     {
         Tile ST = NPCs::GetTileOf(S);
@@ -153,11 +148,13 @@ bool FishSpot(std::string& Action)
             Convex C = NPCs::GetConvexOf(S);
             Paint::Clear();
             Paint::DrawConvex(C, 255, 0, 0, 255);
+
             if (Inventory::IsItemSelected())
             {
                 Debug::Verbose << "Selected: " << Inventory::IsItemSelected() << Magic::IsSpellSelected() << std::endl;
                 Interact::Click(S);
             }
+
             if (Interact::Click(S, Action))
             {
                 Timer IT;
