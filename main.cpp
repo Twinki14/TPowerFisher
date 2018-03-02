@@ -140,7 +140,6 @@ bool FishSpot(std::string& Action)
 {
     Debug::Verbose << "[PowerFisher] Starting FishSpot" << std::endl;
     std::vector<NPC> Spots = NPCs::GetAll(SpotsNames);
-    std::cout << Spots.size() << std::endl;
     for (auto& S : Spots)
     {
         Tile ST = NPCs::GetTileOf(S);
