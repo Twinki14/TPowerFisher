@@ -104,11 +104,6 @@ bool OnStart()
 
 void PrintStatus()
 {
-    Debug::Verbose << "[PowerFisher] Printing Status" << std::endl;
-    std::int32_t Seconds = ((GetScriptTimer().GetTimeElapsed() / 1000) %60);
-    std::int32_t Minutes = ((GetScriptTimer().GetTimeElapsed() / 60000) %60);
-    std::int32_t Hours = (((GetScriptTimer().GetTimeElapsed() / 60000) / 60) %24);
-
     if (StartingXP == 0)
         StartingXP = Stats::GetExperience(Stats::FISHING);
     if (StartingLevel == 0)
@@ -116,16 +111,14 @@ void PrintStatus()
     XPGained = (Stats::GetExperience(Stats::FISHING) - StartingXP);
     LevelsGained = (Stats::GetCurrentLevel(Stats::FISHING) - StartingLevel);
     Debug::Info << "------------------- TPowerFisher by Twinki -------------------" << std::endl;
-    Debug::Info << "--- Runtime: " << Hours << ":" << Minutes << ":" << Seconds << std::endl;
+    Debug::Info << "--- Runtime: " << MillisToHumanLong(GetScriptTimer().GetTimeElapsed()) << std::endl;
     Debug::Info << "--- Fished: " << Fished.GetIterations() << std::endl;
     Debug::Info << "--- XP Gained: " << XPGained << std::endl;
-    Debug::Info << "--- Levels Gained: " << LevelsGained << std::endl;
-    Debug::Info << "--- BreakTimer: " << (double) (BreakHandler::GetBreakTimer().GetTimeElapsed() / 60000) << " minutes" << std::endl;
-    Debug::Info << "--- BreakCounter: " << BreakHandler::GetBreakCounter() << std::endl;
+    Debug::Info << "--- Level: " << Stats::GetCurrentLevel(Stats::FISHING) << "(+" << LevelsGained << ")" << std::endl;
+    Debug::Info << "--- Break Time: " << MillisToHumanShort(BreakHandler::GetBreakTimer().GetTimeElapsed()) << std::endl;
     Debug::Info << "--- Fatigue: " << Profile::GetFatigue() << std::endl;
     Debug::Info << "--------------------------------------------------------------" << std::endl;
     PrintCD.Reset();
-    Debug::Verbose << "[PowerFisher] Done Printing Status" << std::endl;
 }
 
 bool CheckBlacklist(const Tile& T)
@@ -138,7 +131,6 @@ bool CheckBlacklist(const Tile& T)
 
 bool FishSpot(std::string& Action)
 {
-    Debug::Verbose << "[PowerFisher] Starting FishSpot" << std::endl;
     std::vector<NPC> Spots = NPCs::GetAll(SpotsNames);
 
     for (auto& S : Spots)
@@ -151,10 +143,7 @@ bool FishSpot(std::string& Action)
             Paint::DrawConvex(C, 255, 0, 0, 255);
 
             if (Inventory::IsItemSelected())
-            {
-                Debug::Verbose << "Selected: " << Inventory::IsItemSelected() << Magic::IsSpellSelected() << std::endl;
                 Interact::Click(S);
-            }
 
             if (Interact::Click(S, Action))
             {
@@ -170,7 +159,6 @@ bool FishSpot(std::string& Action)
                         Paint::Clear();
                         C = NPCs::GetConvexOf(S);
                         Paint::DrawConvex(C, 0, 255, 0, 255);
-                        Debug::Verbose << "[PowerFisher] Ending FishSpot" << std::endl;
                         return true;
                     }
                     Wait(NormalRandom(200, 10.0f));
@@ -178,13 +166,11 @@ bool FishSpot(std::string& Action)
             }
         }
     }
-    Debug::Verbose << "[PowerFisher] Ending FishSpot" << std::endl;
     return false;
 }
 
 bool DropFish()
 {
-    Debug::Verbose << "[PowerFisher] Starting Drop Fish" << std::endl;
     if (!Inventory::IsOpen())
         Inventory::Open();
 
@@ -212,7 +198,6 @@ bool DropFish()
     if ((ShiftClick) && IsKeyDown(KEY_SHIFT))
         Interact::UpKey(KEY_SHIFT);
 
-    Debug::Verbose << "[PowerFisher] Ending Drop Fish" << std::endl;
     return (!Inventory::ContainsAny(Items));
 }
 
@@ -228,7 +213,6 @@ bool Loop()
             if (PrintCD.IsFinished())
                 PrintStatus();
 
-            Debug::Verbose << "[PowerFisher] Checking Inventory first time" << std::endl;
             if (!Inventory::ContainsAny(Tools))
             {
                 Debug::Fatal << "Tools aren't found in the Players Inventory, you need ";
@@ -237,9 +221,7 @@ bool Loop()
                 Debug::Fatal << "in the Players Inventory, stopping";
                 return false;
             }
-            Debug::Verbose << "[PowerFisher] Done Checking Inventory first time" << std::endl;
 
-            Debug::Verbose << "[PowerFisher] Checking Inventory again" << std::endl;
             if ((Inventory::IsFull()) && (Inventory::ContainsAny(Items)))
             {
                 Debug::Info << "Inventory Full, attempting to empty Inventory" << std::endl;
@@ -249,7 +231,6 @@ bool Loop()
                 Debug::Info << "DropFish ended, about to Wait" << std::endl;
                 Wait(NormalRandom(2000, 0.05f));
             }
-            Debug::Verbose << "[PowerFisher] Done Checking Inventory again" << std::endl;
 
             Player P = Players::GetLocal();
             if ((P.GetAnimationID() == -1) && (!Minimap::GetDestination().IsNegative()))

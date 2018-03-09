@@ -1,13 +1,15 @@
 # depslib dependency file v1.0
-1519950780 source:c:\users\twinki\documents\codeblocks projects\tpowerfisher\main.cpp
+1520585547 source:c:\users\twinki\documents\codeblocks projects\tpowerfisher\main.cpp
 	<Game/Core.hpp>
 	<Core/Internal.hpp>
 	<Game/Tools/BreakHandler.hpp>
 	<Game/Tools/RandomHandler.hpp>
 	<iostream>
+	<iomanip>
 	<vector>
 	<cstdarg>
 	<string>
+	<sstream>
 
 1512716089 c:\users\twinki\documents\codeblocks projects\alpaca-library\include\game\core.hpp
 	"../Core/Internal.hpp"
@@ -708,7 +710,7 @@
 	"Models/NPCs.hpp"
 	"Models/Players.hpp"
 
-1519445661 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\internal.hpp
+1520404950 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\core\internal.hpp
 	"Debug.hpp"
 	"Input.hpp"
 	"Math.hpp"
@@ -1166,7 +1168,7 @@
 	<cstdint>
 	<vector>
 
-1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\tools\widgets.hpp
+1520352849 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\tools\widgets.hpp
 	"../../Core/Types/Box.hpp"
 	"../../Core/Classes/Widget.hpp"
 	<functional>
@@ -1180,7 +1182,7 @@
 	<string>
 	<vector>
 
-1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\bank.hpp
+1520539028 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\bank.hpp
 	"../../Core/Types/Convex.hpp"
 	<string>
 	<cstdint>
@@ -1201,7 +1203,7 @@
 	<string>
 	<vector>
 
-1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\mainscreen.hpp
+1520406323 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\mainscreen.hpp
 	"../../Core/Types/Box.hpp"
 	"../../Core/Classes/Character.hpp"
 	<cstdint>
@@ -1214,7 +1216,7 @@
 	<string>
 	<vector>
 
-1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\minimap.hpp
+1520231405 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\minimap.hpp
 	"../../Core/Types/Tile.hpp"
 	"../../Core/Types/Point.hpp"
 	"../../Core/Classes/Region.hpp"
@@ -1276,11 +1278,12 @@
 1516336578 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\interfaces\gametabs\stats.hpp
 	<cstdint>
 
-1517338916 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\models\sceneobjects.hpp
+1520141229 c:\users\twinki\documents\codeblocks projects\alpacalibrary\include\game\models\sceneobjects.hpp
 	"../../Core/Classes/GameObject.hpp"
 	"../../Core/Classes/DecorativeObject.hpp"
 	"../../Core/Classes/GroundObject.hpp"
 	"../../Core/Classes/WallObject.hpp"
+	"../../Core/Classes/ObjectInfo.hpp"
 	"../../Core/Types/Tile.hpp"
 	"../../Core/Types/Convex.hpp"
 	<functional>
