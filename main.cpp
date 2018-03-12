@@ -114,7 +114,7 @@ void PrintStatus()
     Debug::Info << "--- Runtime: " << MillisToHumanLong(GetScriptTimer().GetTimeElapsed()) << std::endl;
     Debug::Info << "--- Fished: " << Fished.GetIterations() << std::endl;
     Debug::Info << "--- XP Gained: " << XPGained << std::endl;
-    Debug::Info << "--- Level: " << Stats::GetCurrentLevel(Stats::FISHING) << "(+" << LevelsGained << ")" << std::endl;
+    Debug::Info << "--- Level: " << Stats::GetCurrentLevel(Stats::FISHING) << " (+" << LevelsGained << ")" << std::endl;
     Debug::Info << "--- Break Time: " << MillisToHumanShort(BreakHandler::GetBreakTimer().GetTimeElapsed()) << std::endl;
     Debug::Info << "--- Fatigue: " << Profile::GetFatigue() << std::endl;
     Debug::Info << "--------------------------------------------------------------" << std::endl;
@@ -133,6 +133,7 @@ bool FishSpot(std::string& Action)
 {
     std::vector<NPC> Spots = NPCs::GetAll(SpotsNames);
 
+    std::cout << Spots.size() << std::endl;
     for (auto& S : Spots)
     {
         Tile ST = NPCs::GetTileOf(S);
@@ -218,7 +219,7 @@ bool Loop()
                 Debug::Fatal << "Tools aren't found in the Players Inventory, you need ";
                 for (auto& T : Tools)
                     Debug::Fatal << T << " ";
-                Debug::Fatal << "in the Players Inventory, stopping";
+                Debug::Fatal << "in the Players Inventory, stopping" << std::endl;
                 return false;
             }
 
@@ -233,7 +234,7 @@ bool Loop()
             }
 
             Player P = Players::GetLocal();
-            if ((P.GetAnimationID() == -1) && (!Minimap::GetDestination().IsNegative()))
+            if ((P.GetAnimationID() == -1) && (Minimap::GetDestination().IsNegative()))
             {
                 Debug::Info << "Not Fishing, gaining focus and attempting to Fish" << std::endl;
                 GainFocus();
