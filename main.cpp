@@ -209,7 +209,7 @@ bool Loop()
     {
         RandomHandler::Check();
         LoopCD.SetTime(NormalRandom(10000, 0.40f));
-        if (Login::IsLoggedIn())
+        if (Mainscreen::IsLoggedIn())
         {
             if (PrintCD.IsFinished())
                 PrintStatus();
