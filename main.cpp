@@ -8,6 +8,8 @@
 #include <cstdarg>
 #include <string>
 
+using namespace Internal;
+
 // Script Config
 static std::string FishMethod = "NetSmall"; // NetSmall, Bait, Lure, Cage, Harpoon
 static double TabOutChance = 0.60;
