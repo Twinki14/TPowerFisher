@@ -1,14 +1,8 @@
 #include <Game/Core.hpp>
-#include <Core/Internal.hpp>
-#include <Game/Tools/BreakHandler.hpp>
-#include <Game/Tools/RandomHandler.hpp>
-
 #include <iostream>
 #include <vector>
 #include <cstdarg>
 #include <string>
-
-using namespace Internal;
 
 // Script Config
 static std::string FishMethod = "NetSmall"; // NetSmall, Bait, Lure, Cage, Harpoon
@@ -133,34 +127,33 @@ bool CheckBlacklist(const Tile& T)
 
 bool FishSpot(std::string& Action)
 {
-    std::vector<NPC> Spots = NPCs::GetAll(SpotsNames);
+    const auto Spots = NPCs::GetAll(SpotsNames);
 
     std::cout << Spots.size() << std::endl;
     for (auto& S : Spots)
     {
-        Tile ST = NPCs::GetTileOf(S);
-        if (CheckBlacklist(ST))
+        if (CheckBlacklist(S.GetTile()))
         {
-            Convex C = NPCs::GetConvexOf(S);
+            Convex C = S.GetConvex();
             Paint::Clear();
             Paint::DrawConvex(C, 255, 0, 0, 255);
 
             if (Inventory::IsItemSelected())
-                Interact::Click(S);
+                S.Interact();
 
-            if (Interact::Click(S, Action))
+            if (S.Interact(Action))
             {
                 Timer IT;
-                Player P = Players::GetLocal();
+                const auto P = Players::GetLocal();
                 while (IT.GetTimeElapsed() < 10000)
                 {
                     Paint::Clear();
-                    C = NPCs::GetConvexOf(S);
+                    C = S.GetConvex();
                     Paint::DrawConvex(C, 0, 255, 0, 255);
                     if (P.GetAnimationID() != -1)
                     {
                         Paint::Clear();
-                        C = NPCs::GetConvexOf(S);
+                        C = S.GetConvex();
                         Paint::DrawConvex(C, 0, 255, 0, 255);
                         return true;
                     }
@@ -183,19 +176,13 @@ bool DropFish()
     if ((ShiftClick) && !IsKeyDown(KEY_SHIFT))
         Interact::DownKey(KEY_SHIFT);
 
-    std::vector<std::int32_t> Fish;
-    for (const auto& I : Items)
-    {
-        auto Temp = Inventory::GetIndicesOf(I);
-        Fish.insert(Fish.end(), Temp.begin(), Temp.end());
-    }
-    std::sort(Fish.begin(), Fish.end());
+    const auto Fish = Inventory::GetItems(Items);
 
     for (auto& F : Fish)
     {
         if (Inventory::IsItemSelected())
-            Inventory::InteractItemByIndex(F);
-        Inventory::DropItemByIndex(F);
+            F.Interact();
+        Inventory::Drop(F);
     }
 
     if ((ShiftClick) && IsKeyDown(KEY_SHIFT))
@@ -235,7 +222,7 @@ bool Loop()
                 Wait(NormalRandom(2000, 0.05f));
             }
 
-            Player P = Players::GetLocal();
+            const auto P = Players::GetLocal();
             if ((P.GetAnimationID() == -1) && (Minimap::GetDestination().IsNegative()))
             {
                 Debug::Info << "Not Fishing, gaining focus and attempting to Fish" << std::endl;
@@ -268,4 +255,14 @@ bool Loop()
         }
     }
     return true;
+}
+
+bool OnBreak()
+{
+    return false;
+}
+
+void OnEnd()
+{
+    
 }

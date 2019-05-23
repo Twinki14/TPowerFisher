@@ -5,3 +5,7 @@
 TPowerFisher.layout
 *.layout
 *.layout
+
+\.idea/
+
+cmake-build-debug/
