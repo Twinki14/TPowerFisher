@@ -239,7 +239,7 @@ bool DropFish()
 
     const auto Fish = Inventory::GetItems(Items);
 
-    for (auto& F : Fish)
+    for (const auto& F : Fish)
     {
         if (Inventory::IsItemSelected())
             F.Interact();
