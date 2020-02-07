@@ -8,7 +8,7 @@
 
 // Script Config
 static std::string FishMethod = "NetSmall"; // NetSmall, Bait, Lure, Cage, Harpoon
-static double TabOutChance = 0.35;
+static double TabOutChance = 0.45;
 // Trackers
 static Counter FishedCounter;
 // Vars
@@ -34,7 +34,6 @@ void Setup()
 
     RequestArgument("FishMethod", "Fishing method to use, valid entries: NetSmall, Bait, Lure, Cage, Harpoon ");
     RequestArgument("TabOutChance", "Chance to tab out, 0.00 to 1.00");
-
 }
 
 void GetArgs()
@@ -56,9 +55,9 @@ void GetArgs()
         }  catch (std::int32_t E)
         {
             Debug::Warning << "TabOutChance was set to something other than a double, make sure TabOutChance is set to 0.00-1.00" << std::endl;
-            TabOutChance = 0.35;
+            TabOutChance = 0.45;
         }
-    } else TabOutChance = 0.35;
+    } else TabOutChance = 0.45;
 }
 
 bool OnStart()
@@ -273,11 +272,9 @@ bool Loop()
         if (Inventory::IsFull() && Inventory::ContainsAny(Items))
         {
             Debug::Info << "Inventory Full, attempting to empty Inventory" << std::endl;
-            GainFocus();
-            Debug::Info << "Gained focus" << std::endl;
             DropFish();
             Debug::Info << "DropFish ended, about to Wait" << std::endl;
-            Wait(NormalRandom(250, 250 * 0.10));
+            Wait(NormalRandom(350, 350 * 0.10));
         }
 
         if (!IsFishing() && !Mainscreen::IsMoving()) // We aren't fishing, and we aren't actively walking to a new fish spot
@@ -286,15 +283,25 @@ bool Loop()
             GainFocus();
             if (FishSpot(Action))
             {
-                Debug::Info << "Successfully Fished";
-                if (UniformRandom() < TabOutChance)
+                bool TabOut = UniformRandom() <= TabOutChance;
+                bool MouseOff = TabOut && UniformRandom() <= 0.45;
+
+                Debug::Info << "Successfully fished";
+                if (TabOut)
                 {
-                    Debug::Info << ", alt-tabbing" << std::endl;
-                    LoseFocus();
+                    if (MouseOff)
+                    {
+                        Debug::Info << ", mousing off client";
+                        Antiban::MouseOffClient(true);
+                    }else
+                    {
+                        Debug::Info << ", alt-tabbing" << std::endl;
+                        Antiban::LoseClientFocus();
+                    }
                 } else
                     Debug::Info << std::endl;
 
-                std::int32_t Random = NormalRandom(2200, 2200* 0.15);
+                std::int32_t Random = NormalRandom(2200, 2200 * 0.15);
                 if (UniformRandom() <= 0.10) Random *= 2; // 10% chance to multiply the random wait by 2
                 if (UniformRandom() <= 0.05) Random *= 4; // 5% chance to multiply the random wait by 4, even smaller chance that it multiplies by 2, then 4
                 Wait(Random);
