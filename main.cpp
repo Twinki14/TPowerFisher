@@ -1,9 +1,7 @@
 #include <Game/Core.hpp>
 #include <iostream>
 #include <vector>
-#include <cstdarg>
 #include <string>
-#include <sstream>
 #include <iomanip>
 
 // Script Config
